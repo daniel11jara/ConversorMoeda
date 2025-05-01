@@ -1,9 +1,10 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.URI;
 import java.net.URL;
+
 import org.json.JSONObject;
+
 
 public class MoedaService {
 	
@@ -12,7 +13,7 @@ public class MoedaService {
 	public double buscarTaxaCambio (String moedaOrigem, String moedaDestino) {
 		
 		try {
-			String url_str = String.format("https://v6.exchangerate-api.com/v6/%s/pair/%s/%s", moedaDestino, moedaOrigem);
+			String url_str = String.format("https://v6.exchangerate-api.com/v6/%s/pair/%s/%s", API_KEY, moedaOrigem, moedaDestino);
 			
 			URL url = new URL(url_str);
 			HttpURLConnection request = (HttpURLConnection) url.openConnection();

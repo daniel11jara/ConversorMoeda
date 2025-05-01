@@ -24,7 +24,7 @@ public class ConversorApp {
 			
 			opcao = scanner.nextInt();
 			
-			if(opcao >= 1 && opcao <= 7) {
+			if(opcao >= 1 && opcao <= 6) {
 				System.out.print("Digite um valor para converter: ");
 				double valor = scanner.nextDouble();
 				
@@ -58,11 +58,11 @@ public class ConversorApp {
 					break;
 				}
 				
-				double taxa moedaService.buscarTaxaCambio(conversao.getMoedaOrigem(), conversao.getMoedaDestino());
+				double taxa = moedaService.buscarTaxaCambio(conversao.getMoedaOrigem(), conversao.getMoedaDestino());
 				
 				if (taxa != -1) {
 					double resultado = conversao.getValor() * taxa;
-					System.out.printf("Valor da Conversão: %.2 %s \n\n", resultado, conversao.getMoedaDestino());
+					System.out.printf("Valor da Conversão: %.2f%s \n\n", resultado, conversao.getMoedaDestino());
 				} else {
 					System.out.println("Não foi possível obter a taxa de cambio. \n");
 				}
